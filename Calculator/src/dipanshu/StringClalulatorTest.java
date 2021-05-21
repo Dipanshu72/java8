@@ -28,5 +28,20 @@ public class StringClalulatorTest {
 		assertThat(StringCalculator.sum("1,2,3"), is(6));
 		
 	}
+	
+	@Test
+	public void sumNumberDelimitedCommaOrNewline() {
+		assertThat(StringCalculator.sum("1\n2,3"), is (6));
+	}
+	
+	@Test
+	public void sumsNumberDelimitedByNewline() {
+		assertThat(StringCalculator.sum("1\n2"), is(3));
+	}
+	
+	@Test
+	public void usesDelimiterSepcified() {
+		assertThat(StringCalculator.sum("//;\n1;2"), is(3));
+	}
 
 }
